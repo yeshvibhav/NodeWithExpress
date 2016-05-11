@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.location.hash=no-back-button;
+        window.location.hash=Again-No-back-button;//again because google chrome don't insert first hash into history
+        window.onhashchange=function(){
+            window.location.hash=no-back-button;
+            window.location.hash = no-back-button;}
+    </script>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="jquery-1.11.3.min.js"></script>
+
+    <style>
+        body {
+            background: #E3E5E5;
+            background-size: cover;
+            font-family: Montserrat;
+        }
+        .login-block{
+            margin-top:-15px ;
+        }
+        .approvedMessage{
+            margin-top:-2px;
+            width: 80%;
+            margin-left: 25%;
+            font-size: 23px;
+            color:#ff656c;
+        }
+        .title{
+            margin-top:9%;
+            width: 80%;
+            margin-left: 35%;
+            font-size: 30px;
+            position: relative;
+            display: inline-block;
+            color:#ff656c;
+        }
+    </style>
+</head>
+<body>
+<div>  <% include ./partials/logoutPanel.ejs %></div>
+
+<div class="title"></div>
+<div>  <% include ./partials/menuBar.ejs %></div>
+<div class="approvedMessage">
+    USER ADDED SUCCESSFULLY
+</div>
+<div class="login-block" >
+
+</div>
+
+
+
+
+<script>
+    window.location.hash="no-back-button";
+    window.location.hash="Again-no-back-button";//again because google chrome don't insert first hash into history
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+</script>
+<div>  <% include ./partials/footer.ejs %></div>
+</body>
+</html>

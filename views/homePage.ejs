@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.location.hash=no-back-button;
+        window.location.hash=Again-No-back-button;//again because google chrome don't insert first hash into history
+        window.onhashchange=function(){
+            window.location.hash=no-back-button;
+            window.location.hash = no-back-button;}
+    </script>
+
+
+    <style>
+        body {
+            background: #E3E5E5;
+            background-size: cover;
+            font-family: Montserrat;
+        }
+        .approvedMessage{
+            margin-top:-2px;
+            width: 80%;
+            margin-left: 25%;
+            font-size: 23px;
+            color:#ff656c;
+        }
+
+    </style>
+</head>
+
+<body>
+<div>  <% include ./partials/topPanel.ejs %></div>
+<div class="login-block">
+    <div>  <% include ./partials/menuBar.ejs %></div>
+    <input type="hidden" name="username" value="">
+
+
+    <script>
+        window.location.hash="no-back-button";
+        window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+        window.onhashchange=function(){window.location.hash="no-back-button";}
+    </script>
+</div>
+<div>  <% include ./partials/footer.ejs %></div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        #cboxOverlay{ background:#666666; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        window.location.hash=no-back-button;
+        window.location.hash=Again-No-back-button;//again because google chrome don't insert first hash into history
+        window.onhashchange=function(){
+            window.location.hash=no-back-button;
+            window.location.hash = no-back-button;}
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            min-height: 100%;
+            position: relative;
+        }
+        body:after {
+            content: '';
+            display: block;
+            height: 100px;
+        }
+        body {
+            font: 16px/1.4 Georgia, Serif;
+            background-size: cover;
+            background: #E3E5E5;
+            font-family: Montserrat;
+        }
+        .menuHeader{
+            margin-top: 5%;
+            margin-left: 45%;
+            font-size: 30px;
+            position: relative;
+            display: inline-block;
+            color:#ffae45;
+        }
+
+        p {
+            margin-left: 18%;
+        }
+
+        .block {
+            margin-top: 21px;
+            margin-left: 160px;
+
+        }
+        .testButton{
+            text-align:center;
+
+        }
+        .block button {
+            margin-top:15px ;
+            width: 10%;
+            height: 30px;
+            background: #ffae45;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ffae45;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-family: Montserrat;
+            outline: none;
+            cursor: pointer;
+        }
+        .block{
+            margin-top:-15px ;
+        }
+        .block button:hover {
+            background: #ffae45;
+        }
+        /* tr:nth-of-type(odd) {
+           background:#D3D3D3;
+         }*/
+        th {
+
+            color: white;
+            font-weight: bold;
+        }
+        td, th {
+            padding: 10px;
+            text-align: left;
+        }
+        /* tr{
+           border: 1px solid #c0c0c0;
+         }*/
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .remarkClass{
+            display: block;
+            width: 200px;
+            color:#58595b;
+            font-weight: normal;
+            font-size: 16px;
+            font-family: "Arial", sans-serif;
+            padding:5px;
+            margin-top:5px;
+            margin-bottom: 10px;
+            background: #fff;
+            -moz-box-shadow: inset 0px 0px 7px  #666;
+            -webkit-box-shadow: inset 0px 0px 7px  #666;
+            box-shadow: inset 0px 0px 7px  #666;
+            outline: none;
+            border: none;
+            resize:none;
+        }
+
+        .textFieldVelName {
+            display: block;
+            width: 200px;
+            color:#58595b;
+            font-weight: normal;
+            font-size: 16px;
+            font-family: "Arial", sans-serif;
+            padding:5px;
+            margin-top:5px;
+            margin-bottom: 10px;
+            background: #fff;
+            -moz-box-shadow: inset 0px 0px 7px  #666;
+            -webkit-box-shadow: inset 0px 0px 7px  #666;
+            box-shadow: inset 0px 0px 7px  #666;
+            outline: none;
+            border: none;
+            resize:none;}
+        .dropdownMenuCountry,.dropdownMenu{
+            display: block;
+            width: 200px;
+            color:#58595b;
+            font-weight: normal;
+            font-size: 16px;
+            font-family: "Arial", sans-serif;
+            padding:5px;
+            margin-top:5px;
+            margin-bottom: 10px;
+            background: #fff;
+            -moz-box-shadow: inset 0px 0px 7px  #666;
+            -webkit-box-shadow: inset 0px 0px 7px  #666;
+            box-shadow: inset 0px 0px 7px  #666;
+            outline: none;
+            border: none;
+            resize:none;
+        }
+        .ui-widget-header {
+            background: #ffae45;
+        }
+
+        .ui-dialog .ui-dialog-titlebar-close span {
+            margin: -8px;
+        }
+        .ui-dialog .ui-dialog-content {
+            border:none;
+            padding: 0em;
+        }
+        .headerMessage{
+            margin-left:0px;
+        }
+    </style>
+</head>
+<body>
+<div>  <% include ./partials/logoutPanel.ejs %></div>
+<div class="menuHeader">ADD USERS </div>
+<div style="margin-top:2%"></div>
+<div>  <% include ./partials/menuBar.ejs %></div>
+<div class="block">
+
+    <form id="addForm" role="form"  method="post" action="/addUserList">
+        <table width="60%" margin-top="2%" align="center">
+            <tr><td>User Name :</td>
+
+                <td> <p><input type="text"  value=""  name="userName"   class="textFieldVelName" required="true"/></p></td>
+                </tr>
+            <tr>
+                <td>First Name :</td>
+                <td> <p><input type="text"  value=""  name="firstName"   class="textFieldVelName" required="true" pattern="^[A-Za-z]+( [A-Za-z]+)*$" oninvalid="Invalidname(this);"oninput="Invalidname(this);"maxlength="50"/></p></td>
+
+            </tr>
+            <tr>
+                <td>Last Name :</td>
+                <td> <p><input type="text"  value=""  name="lastName"   class="textFieldVelName" required="true" pattern="^[A-Za-z]+( [A-Za-z]+)*$" oninvalid="Invalidname(this);"oninput="Invalidname(this);"maxlength="50"/></p></td>
+
+            </tr>
+            <tr>
+                <td>Gender :</td>
+                <td> <p><input type="text"  value=""  name="gender"   class="textFieldVelName" required="true" pattern="^[A-Za-z]+( [A-Za-z]+)*$" oninvalid="Invalidname(this);"oninput="Invalidname(this);"maxlength="1"/></p></td>
+
+            </tr>
+            <tr>
+                <td>Nationality :</td>
+                <td> <p><input type="text"  value=""  name="nationality"   class="textFieldVelName" required="true" pattern="^[A-Za-z]+( [A-Za-z]+)*$" oninvalid="Invalidname(this);"oninput="Invalidname(this);"maxlength="20"/></p></td>
+
+            </tr>
+
+            <tr>
+                <td>Mobile No :</td>
+                <td> <p><input type="text"  value=""  name="mobNo"   class="textFieldVelName" required="true" pattern="[0-9]{10}" oninvalid="Invalidname(this);"oninput="Invalidname(this);"minlength="10"/></p></td>
+
+            </tr>
+
+            <tr>
+                <td>Office No :</td>
+                <td> <p><input type="text"  value=""  name="officeNum"   class="textFieldVelName" required="true" pattern="[0-9]{7}" oninvalid="Invalidname(this);"oninput="Invalidname(this);"maxlength="20"/></p></td>
+
+            </tr>
+
+
+        </table>
+
+        <div class="testButton">
+            <button  type="submit" id="button1" >ADD</button>
+        </div>
+
+
+
+
+    </form>
+    <script>
+        window.location.hash="no-back-button";
+        window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+        window.onhashchange=function(){window.location.hash="no-back-button";}
+
+        function Invalidname(textbox) {
+
+            if(textbox.value==""){
+
+
+                textbox.setCustomValidity('Please Enter Field');
+            }
+            else{
+
+                if(textbox.validity.patternMismatch){
+
+                    textbox.setCustomValidity('Please Enter Valid Input');
+                }
+                else {
+                    textbox.setCustomValidity('');
+                }
+                return true;
+            }
+        }
+
+    </script>
+</div>
+<div>  <% include ./partials/footer.ejs %></div>
+</body>
+</html>
+

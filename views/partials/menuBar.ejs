@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .menuTitle {
+            background-color: #c4c4c4;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn {
+            background-color: #c4c4c4;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #727272;
+        }
+
+        #navigation {
+            font-size:1.05em;
+            width:255px;
+            position: absolute;
+
+        }
+        #navigation ul {
+            margin:0px;
+            padding:0px;
+
+
+        }
+
+        #navigation li {
+            list-style: none;
+
+        }
+        #navigation li a {
+            height: 50px;
+
+        }
+
+        ul.top-level {
+            background:#666;
+        }
+
+        ul.top-level li {
+            border-bottom: #fff solid;
+            border-top: #fff solid;
+            border-width: 1px;
+        }
+        #navigation a {
+            color: #fff;
+            cursor: pointer;
+            display:block;
+            height:5px;
+            line-height: 25px;
+            text-indent: 10px;
+            text-decoration:none;
+            width:100%;
+        }
+        #navigation a:hover {
+
+        }
+        #navigation li:hover {
+
+            position: relative;
+
+
+        }
+        ul.sub-level {
+            display: none;
+        }
+        li:hover .sub-level {
+            background: #A0A0A0;
+            border: #fff solid;
+            border-width: 1px;
+            display: block;
+        }
+        .block{
+            float:none;
+        }
+        .sub-level li a{
+            height: 1px;
+
+        }
+        #navigation .sub-level li a:hover{
+            text-decoration:underline;
+        }
+
+    </style>
+</head>
+
+
+<body>
+<div id="window">
+    <nav id="nav_wrap">
+        <div id="navigation">
+            <ul class="top-level">
+                <li><a href="#">Admin Management</a>
+
+                    <ul class="sub-level">
+                        <li><a href="/homePage">Home Page</a>
+                        </li>
+                        <li><a href="/userList">Users List</a>
+                        </li>
+                        <li><a href="/addUser">Add Users</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+
+        </div>
+    </nav>
+
+</div>
+
+
+</body>
+</html>

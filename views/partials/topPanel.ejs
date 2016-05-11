@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.location.hash=no-back-button;
+        window.location.hash=Again-No-back-button;//again because google chrome don't insert first hash into history
+        window.onhashchange=function(){
+            window.location.hash=no-back-button;
+            window.location.hash = no-back-button;}
+    </script>
+    <style>
+
+        .logout{
+            margin-top:-3%;
+            margin-left: 86%;
+
+        }
+        #toppanel{
+            background:#A0A0A0 ; height:90px;margin-top:-5px
+        }
+    </style>
+</head>
+<body>
+<header >
+    <div id="toppanel">
+      </div>
+    <form method="post" >
+
+        <div class="logout"> <a href="/adminLogout" name="logout" >LOGOUT</a></div>
+        <input type="hidden" name="username" value="">
+    </form>
+    <div style="margin-top:20px;" ><H1 style="color: #ff656c;
+             font-weight: bold;text-align: center">Welcome Administrator</H1> </div>
+</header>
+
+</body>
+</html>
